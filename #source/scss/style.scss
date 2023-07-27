@@ -45,9 +45,13 @@ html {
 	padding-top: 17px;
 	display: flex;
 	flex-direction: column;
+	opacity: 0;
+	transition: opacity 0.3s;
 
 	&__top {
-		height: 100px;
+		transform: translate(0, -100px);
+		opacity: 0;
+		transition: all .5s 1s;
 	}
 
 	&__top-inner {
@@ -163,7 +167,6 @@ html {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: -100px;
 	}
 
 	&__title {
@@ -174,6 +177,9 @@ html {
 		text-transform: uppercase;
 		color: #FFFFFF;
 		margin-bottom: 40px;
+		transition: transform .5s, opacity .5s;
+		opacity: 0;
+		transform: scale(0);
 	}
 
 	&__info {
@@ -186,6 +192,15 @@ html {
 		padding: 24px;
 		text-align: center;
 		margin-bottom: 39px;
+		transition: transform 1s, opacity 1s;
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	&__bidy-button-box {
+		transition: transform 1.5s, opacity 1.5s;
+		opacity: 0;
+		transform: translate(0, 100px);
 	}
 
 	&__body-button {
@@ -240,7 +255,6 @@ html {
 
 	&__content {
 		max-width: 445px;
-		// height: 311px;
 		margin-right: 70px;
 		display: flex;
 		flex-direction: column;
@@ -248,13 +262,24 @@ html {
 	}
 
 	&__heading {
-		// width: 445px;
 		margin-bottom: 40px;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all 1s;
 	}
 
 	&__text {
 		text-align: justify;
+		margin-bottom: 20px;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all 1s .5s;
+	}
 
+	&__link-box {
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all 1s .5s;
 	}
 
 	&__link {
@@ -275,6 +300,9 @@ html {
 		display: flex;
 		align-items: center;
 		flex-grow: 1;
+		opacity: 0;
+		transform: translate(100px, 0);
+		transition: all 1s 1s;
 	}
 
 	&__videobox img {
@@ -283,15 +311,22 @@ html {
 		object-fit: cover;
 	}
 
-	&__video-btn {
+	&__video-button-box {
 		width: 66px;
 		height: 66px;
 		margin-right: -33px;
 		z-index: 5;
+		opacity: 0;
+		transform: scale(0);
+		transition: all cubic-bezier(0.38, -0.63, 0.78, 1.67) .5s 2s;
+	}
+
+	&__video-button {
+		display: block;
 		transition: all, .3s;
 	}
 
-	&__video-btn:hover {
+	&__video-button:hover {
 		transform: scale(1.2);
 	}
 }
@@ -305,6 +340,9 @@ html {
 	&__heading {
 		text-align: center;
 		margin-bottom: 63px;
+		transition: all .5s;
+		opacity: 0;
+		transform: scale(0);
 	}
 
 	&__cards {
@@ -320,6 +358,9 @@ html {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		transform: scale(0);
+		opacity: 0;
+		transition: transform .5s;
 	}
 
 	&__card:last-child {
@@ -397,6 +438,9 @@ html {
 	&__heading {
 		margin-bottom: 52px;
 		text-align: center;
+		opacity: 0;
+		transform: scale(0);
+		transition: all .5s;
 	}
 
 	&__row {
@@ -410,6 +454,9 @@ html {
 		align-items: center;
 		width: 191px;
 		position: relative;
+		opacity: 0;
+		transform: scale(0);
+		transition: all .5s;
 	}
 
 	&__item-imagebox {
@@ -472,11 +519,17 @@ html {
 
 	&__heading {
 		margin-bottom: 42px;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all .5s;
 	}
 
 	&__text {
 		color: #fff;
 		margin-bottom: 40px;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all .5s;
 	}
 
 	&__stores {
@@ -484,6 +537,12 @@ html {
 		width: 134px;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	&__stores-item {
+		opacity: 0;
+		transform: scale(0);
+		transition: all 1s;
 	}
 
 	&__stores-link {
@@ -495,12 +554,16 @@ html {
 		transform: scale(1.1);
 	}
 
+	&__slider-inner {
+		opacity: 0;
+		transform: translate(100px, 0);
+		transition: all .5s 1.5s;
+	}
 
 	&__slider {
 		width: 533px;
 		border-radius: 6px;
 		position: relative;
-
 	}
 
 	&__slide {
@@ -574,16 +637,25 @@ html {
 
 	&__heading {
 		margin-bottom: 50px;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all .5s;
 	}
 
 	&__text {
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 140%;
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all .5s .5s;
 	}
 
 	&__form {
 		width: 540px;
+		opacity: 0;
+		transform: translate(100px, 0);
+		transition: all .5s 1s;
 	}
 
 	&__form-service {
@@ -621,7 +693,6 @@ html {
 
 	&__form-phone {
 		flex: 1 1 auto;
-
 	}
 
 	&__form-service {
@@ -632,6 +703,12 @@ html {
 
 	&__form-service option:first-child {
 		color: red;
+	}
+
+	&__form-button-box {
+		opacity: 0;
+		transform: scale(0);
+		transition: all cubic-bezier(0.38, -0.63, 0.78, 1.67) .5s 2s;
 	}
 
 	&__form-button {
@@ -773,5 +850,16 @@ html {
 
 }
 
+
+/*==================================== ANIMATION ====================================*/
+
+.anim-item--active,
+.loaded {
+	transform: translate(0, 0);
+	transform: scale(1);
+	opacity: 1;
+}
+
+/*==================================== MEDIA ====================================*/
 
 @import "media";
