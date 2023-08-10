@@ -47,7 +47,7 @@ html {
 	flex-direction: column;
 	opacity: 0;
 	transition: opacity 0.3s;
-
+	
 	&__top {
 		transform: translate(0, -100px);
 		opacity: 0;

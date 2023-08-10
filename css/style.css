@@ -1262,7 +1262,6 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 50;
     background: rgba(0, 0, 0, 0.35);
     visibility: hidden;
     opacity: 0;
@@ -1272,6 +1271,7 @@ html {
   .overlay--show {
     visibility: visible;
     opacity: 1;
+    z-index: 50;
   }
   .focused__slider {
     width: 400px;
