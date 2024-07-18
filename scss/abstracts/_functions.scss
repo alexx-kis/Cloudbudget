@@ -1,0 +1,67 @@
+//%======================== FUNCTIONS ========================%//
+//%======================== FUNCTIONS ========================%//
+@use 'sass:math';
+
+//%------------ to Fixed decimals ------------%//
+@function toFixed($value, $decimals) {
+  @return calc(round($value * math.pow(10, $decimals)) / math.pow(10, $decimals));
+}
+
+//%======================== CONVERT PX TO VW ========================%//
+//% converts px to vw according to custom viewport width
+@function toVW($value, $vp) {
+  @return toFixed(calc($value/$vp*100vw), 3);
+}
+
+//% converts px to vw according to DESKTOP viewport width
+@function vwDesk($value) {
+  @return toVW($value, $DESKTOP);
+}
+
+//% converts px to vw according to TABLET viewport width
+@function vwTab($value) {
+  @return toVW($value, $TABLET);
+}
+
+//% converts px to vw according to MOBILE viewport width
+@function vwMob($value) {
+  @return toVW($value, $MOBILE);
+}
+
+
+//%------------ adapt to custom vp ------------%//
+@function vm($max, $min, $vp) {
+  @return max(toVW($max, $vp), $min);
+}
+
+//% adapt to desktop vp (CONST)
+@function const($const) {
+  @return vm($const, $const, $DESKTOP);
+}
+
+//% adapt to desktop vp
+@function desk($max, $min) {
+  @return vm($max, $min, $DESKTOP);
+}
+
+//% adapt to laptop vp
+@function lap($max, $min) {
+  @return vm($max, $min, $LAPTOP);
+}
+
+//% adapt to tablet vp
+@function tab($max, $min) {
+  @return vm($max, $min, $TABLET);
+}
+
+//% adapt to mobile vp
+@function mob($max, $min) {
+  @return vm($max, $min, $MOBILE);
+}
+
+
+//%======================== CONVERT PX TO VH ========================%//
+//% converts px to vw according to custom viewport width
+@function toVH($value, $vph) {
+  @return toFixed(calc($value/$vph*100dvh), 3);
+}

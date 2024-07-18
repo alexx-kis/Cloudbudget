@@ -1,0 +1,6 @@
+.DS_Store
+Icon?
+!icons/
+# node_modules
+# .htmlvalidate.json
+# .settings.json 

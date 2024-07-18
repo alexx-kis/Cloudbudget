@@ -1,0 +1,30 @@
+/*& //&======================== POLYLINE-INPUTS DEFAULTS ========================&// &*/
+/*& //&======================== POLYLINE-INPUTS DEFAULTS ========================&// &*/
+
+.polyline-input {
+  display: inline-grid;
+  align-items: stretch;
+  position: relative;
+
+  &::after,
+  textarea {
+    grid-area: 2 / 1;
+    width: auto;
+    font: inherit;
+    resize: none;
+    min-width: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &::after {
+    content: attr(data-value) " ";
+    visibility: hidden;
+    white-space: pre-wrap;
+  }
+}

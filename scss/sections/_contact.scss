@@ -1,0 +1,98 @@
+/*@ //@======================== contact ========================@// @*/
+/*@ //@======================== contact ========================@// @*/
+
+.contact {
+  padding: 117px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 445px;
+    margin-right: 30px;
+  }
+
+  &__heading {
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  &__form {
+    width: 540px;
+  }
+
+  &__form-service {
+    color: rgba(19, 39, 67, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+
+  &__form-row {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form-input {
+    margin-bottom: 24px;
+    padding: 20px 30px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+  }
+
+  &__form-input::placeholder {
+    color: rgba(19, 39, 67, 0.5);
+  }
+
+  &__form-firstname,
+  &__form-lastname {
+    flex: 1 1 auto;
+  }
+
+  &__form-firstname {
+    margin-right: 24px;
+  }
+
+  &__form-phone {
+    flex: 1 1 auto;
+  }
+
+  &__form-service {
+    flex: 1 1 auto;
+    margin-bottom: 27px;
+    padding: 20px 26px;
+  }
+
+  &__form-service option:first-child {
+    color: red;
+  }
+
+  &__form-button-box {
+    transition: all cubic-bezier(0.38, -0.63, 0.78, 1.67) .5s;
+  }
+
+  &__form-button {
+    padding: 17px 34px;
+    border: 1.5px solid #ED4C5C;
+    border-radius: 6px;
+    background: #ED4C5C;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-transform: uppercase;
+    transition: all .3s;
+  }
+
+  &__form-button:hover {
+    transform: scale(1.1);
+  }
+}

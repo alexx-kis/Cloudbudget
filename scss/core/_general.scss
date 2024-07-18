@@ -1,0 +1,44 @@
+/*@ //@======================== GENERAL ========================@// @*/
+/*@ //@======================== GENERAL ========================@// @*/
+
+html,
+body {
+	font-family: Lato, sans-serif;
+	line-height: 160%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: clip;
+	position: relative;
+}
+
+.container {
+	margin: 0 auto;
+	height: 100%;
+	padding-inline: const(40px);
+	max-width: const(1024px);
+
+	@media (max-width: $LAPTOP) {
+		padding-inline: lap(40px, 20px);
+	}
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: #00000061;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 250ms;
+
+	&._show {
+		opacity: 1;
+		visibility: visible;
+	}
+}

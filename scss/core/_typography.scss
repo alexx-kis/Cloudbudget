@@ -1,0 +1,30 @@
+/*^ //^======================== TYPOGRAPHY ========================^// ^*/
+/*^ //^======================== TYPOGRAPHY ========================^// ^*/
+
+.heading {
+  font-size: const(36px);
+  font-weight: 600;
+  line-height: 43px;
+
+  @media (max-width: $LAPTOP) {
+    font-size: lap(36px, 24px);
+  }
+  @media (max-width: $TABLET) {
+    font-size: tab(24px, 20px);
+  }
+
+  &._main {
+    font-size: const(72px);
+
+    @media (max-width: $LAPTOP) {
+      font-size: lap(72px, 60px);
+    }
+
+    @media (max-width: $TABLET) {
+      font-size: tab(60px, 48px);
+    }
+    @media (max-width: $MOBILE) {
+      font-size: mob(48px, 32px);
+    }
+  }
+}
