@@ -1,4 +1,47 @@
-// /*$ //$======================== FORMS ========================$// $*/
-// /*$ //$======================== FORMS ========================$// $*/
+/*$ //$======================== FORMS ========================$// $*/
+/*$ //$======================== FORMS ========================$// $*/
 
-// /* uncomment all */
+/*$ //$------------ contact-form ------------$// $*/
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: const(24px);
+
+  &__fieldset {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: const(24px);
+  }
+
+  &__input, &__select {
+    flex: 1 1 auto;
+    padding-inline: const(30px);
+    padding-block: const(20px);
+    border: const(1px) solid #333333;
+    border-radius: const(6px);
+
+    &::placeholder {
+      color: rgba(19, 39, 67, 0.5);
+    }
+  }
+
+  &__button {
+    padding-inline: const(34px);
+    padding-block: const(17px);
+    border: const(1px) solid #ED4C5C;
+    border-radius: const(6px);
+    background: #ED4C5C;
+    color: #FFFFFF;
+    font-size: const(14px);
+    text-transform: uppercase;
+    transition: all 250ms;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__select {
+
+  }
+}

@@ -1,7 +1,31 @@
-// /*^ //^======================== SELECTS ========================^// ^*/
-// /*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
 
-// import default 
-// @import '../defaults/dropdowns-and-selects-default';
 
-// /* uncomment all */
+@import '../defaults/dropdowns-and-selects-default';
+
+.contact-form__select {
+  transition: all 250ms;
+  .select {
+    &__body {
+      left: calc(-1 * const(1px));
+      right: calc(-1 * const(1px));
+      background-color: #fff;
+      top: 100%;
+    }
+
+    &__list {
+      border: const(1px) solid #333333;
+      border-top: none;
+    }
+
+    &__label {
+      padding-inline: const(30px);
+      padding-block: const(20px);
+    }
+
+  }
+  &._active {
+    border-radius: const(6px) const(6px) 0 0;
+  }
+}

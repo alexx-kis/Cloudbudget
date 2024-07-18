@@ -41,10 +41,10 @@
                   <a class="header__menu-link" href="#">overview</a>
                 </li>
                 <li class="header__menu-item">
-                  <a class="header__menu-link" href="#">features</a>
+                  <a class="header__menu-link" href="#features">features</a>
                 </li>
                 <li class="header__menu-item">
-                  <a class="header__menu-link" href="#">technology</a>
+                  <a class="header__menu-link" href="#technology">technology</a>
                 </li>
                 <li class="header__menu-item">
                   <a class="header__menu-link" href="#contact">contact</a>
@@ -123,7 +123,7 @@
         </section>
 
         <!-- ^  software  ^ -->
-        <section class="software">
+        <section class="software" id="software">
           <div class="container">
             <div class="software__inner">
               <div class="software__content">
@@ -156,7 +156,7 @@
         </section>
 
         <!-- ^  features  ^ -->
-        <section class="features">
+        <section class="features" id="features">
           <div class="container">
             <div class="features__inner">
               <h2 class="features__heading heading">Features</h2>
@@ -214,7 +214,7 @@
         </section>
 
         <!-- ^  technology  ^ -->
-        <section class="technology">
+        <section class="technology" id="technology">
           <div class="container">
             <div class="technology__inner">
               <h2 class="technology__heading heading">Technology</h2>
@@ -340,30 +340,33 @@
                   support team will get back to you within 24 hours
                 </div>
               </div>
-              <form class="contact__form">
-                <div class="contact__form-row">
+              <form class="contact__form contact-form">
+                <fieldset class="contact-form__fieldset">
+									<legend hidden></legend>
                   <input
-                    class="contact__form-firstname contact__form-input"
+                    class="contact-form__input"
                     type="text"
                     placeholder="First Name"
                     required
                   />
                   <input
-                    class="contact__form-lastname contact__form-input"
+                    class="contact-form__input"
                     type="text"
                     placeholder="Last Name"
                   />
-                </div>
-                <div class="contact__form-row">
+                </fieldset>
+                <fieldset class="contact-form__fieldset">
+									<legend hidden></legend>
                   <input
-                    class="contact__form-phone contact__form-input"
+                    class="contact-form__input"
                     type="text"
                     placeholder="Phone Number"
                     required
                   />
-                </div>
-                <div class="contact__form-row">
-                  <select class="contact__form-service contact__form-input">
+                </fieldset>
+                <fieldset class="contact-form__fieldset">
+									<legend hidden></legend>
+                  <!-- <select class="contact-form__input">
                     <option
                       class="contact__form-service--selected"
                       value
@@ -374,10 +377,43 @@
                     <option value="">Service 1</option>
                     <option value="">Service 2</option>
                     <option value="">Service 3</option>
-                  </select>
-                </div>
-                <div class="contact__form-button-box">
-                  <button class="contact__form-button" type="submit">
+                  </select> -->
+
+									<div class="contact-form__select select">
+										<div class=" select__header">
+											<p class=" select__header-text">
+												Select Service
+											</p>
+											<div class=" select__header-icon">
+
+											</div>
+										</div>
+										<div class=" select__body">
+											<ul class=" select__list">
+												<li class=" select__item">
+													<label class=" select__label">
+														<input class=" select__input" type="radio" name="singleSelect">
+															Service 1
+													</label>
+												</li>
+												<li class=" select__item">
+													<label class=" select__label">
+														<input class=" select__input" type="radio" name="singleSelect">
+															Service 2
+													</label>
+												</li>
+												<li class=" select__item">
+													<label class=" select__label">
+														<input class=" select__input" type="radio" name="singleSelect">
+															Service 3
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+                </fieldset>
+                <div class="contact-form__button-box">
+                  <button class="contact-form__button" type="submit">
                     SUBMIT NOW
                   </button>
                 </div>
@@ -517,6 +553,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="vendor/splide/splide.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

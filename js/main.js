@@ -1,3 +1,5 @@
+import './dropdowns-and-select.js';
+
 $(function () {
 	// $('.focused__slider').slick({
 	// 	centerMode: true,
