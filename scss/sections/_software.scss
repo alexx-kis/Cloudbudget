@@ -2,29 +2,51 @@
 /*@ //@======================== software ========================@// @*/
 
 .software {
-  padding-top: 94px;
-  padding-bottom: 95px;
+  padding-block: const(100px);
+
+  @media (max-width: $LAPTOP) {
+    padding-block: lap(100px, 60px);
+  }
+
+  @media (max-width: $MOBILE) {
+    padding-block: mob(60px, 40px);
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $MOBILE) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    max-width: 445px;
-    margin-right: 70px;
+    width: max(445px, 50%);
+    margin-right: const(70px);
+
+    @media (max-width: $LAPTOP) {
+      margin-right: lap(70px, 30px);
+    }
+
+    @media (max-width: $MOBILE) {
+      margin-right: 0;
+      width: 100%;
+    }
   }
 
   &__heading {
-    margin-bottom: 40px;
+    margin-bottom: const(40px);
   }
 
   &__text {
-    margin-bottom: 20px;
+    margin-bottom: const(20px);
+    font-size: const(14px);
     text-align: justify;
   }
 
@@ -32,15 +54,14 @@
 
   &__link {
     color: #000000;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
-    text-align: justify;
+    font-size: const(14px);
     transition: all .3s;
-  }
 
-  &__link:hover {
-    color: #ED4C5C;
+    @media (hover:hover) {
+      &:hover {
+        color: #ED4C5C;
+      }
+    }
   }
 
   &__video {
@@ -48,25 +69,55 @@
     display: flex;
     align-items: center;
     position: relative;
+
+    @media (max-width: $MOBILE) {
+      width: 100%;
+    }
   }
 
-  &__video-box img {
+  &__video-box {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__video-button-box {
-    width: 66px;
-    height: 66px;
-    margin-right: -33px;
+    flex-shrink: 0;
+    margin-right: calc(-1 * const(33px));
     z-index: 5;
+    @include square(const(66px));
+
     // transition: all cubic-bezier(0.38, -0.63, 0.78, 1.67) .5s 2s;
+    @media (max-width: $LAPTOP) {
+      @include square(lap(66px, 40px));
+      margin-right: calc(-1 * lap(33px, 20px));
+    }
+
+    @media (max-width: $MOBILE) {
+      margin-right: 0;
+      position: absolute;
+      left: 50%;
+      translate: -50%;
+      @include square(mob(66px, 40px));
+    }
   }
 
-  &__video-button {}
+  &__video-button {
+    display: block;
+    @include square(100%);
 
-  &__video-button:hover {
-    transform: scale(1.2);
+    img {
+      @include square(100%);
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 }

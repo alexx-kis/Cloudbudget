@@ -4,7 +4,7 @@
 .heading {
   font-size: const(36px);
   font-weight: 600;
-  line-height: 43px;
+  line-height: 1.2;
 
   @media (max-width: $LAPTOP) {
     font-size: lap(36px, 24px);
