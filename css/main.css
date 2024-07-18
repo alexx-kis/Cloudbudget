@@ -165,10 +165,83 @@ html {
   opacity: 0;
   -webkit-transition: all 250ms;
   transition: all 250ms;
+  z-index: 100;
 }
 .overlay._show {
   opacity: 1;
   visibility: visible;
+}
+
+/*^ //^======================== BURGER ========================^// ^*/
+/*^ //^======================== BURGER ========================^// ^*/
+.burger {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .burger {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 150;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 20px -8px #000;
+            box-shadow: 0 0 20px -8px #000;
+    background: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .burger--follow {
+    -webkit-box-shadow: 0 0 10px 1px #6d839b;
+            box-shadow: 0 0 10px 1px #6d839b;
+    background: #fff;
+  }
+  .burger__line {
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #1E212C;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .burger__line:first-child, .burger__line:last-child {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .burger__line:first-child {
+    margin-bottom: 5px;
+  }
+  .burger__line:last-child {
+    margin-top: 5px;
+  }
+  .burger._active {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .burger._active .burger__line:first-child, .burger._active .burger__line:last-child {
+    margin: 0;
+    position: absolute;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
 }
 
 /*$ //$======================== HEADER ========================$// $*/
@@ -177,6 +250,7 @@ html {
   width: 100%;
   padding-block: max(1.25vw, 14px);
   position: absolute;
+  z-index: 100;
 }
 .header._open .header__inner {
   translate: 0;
@@ -1049,76 +1123,6 @@ html {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
-}
-
-.burger {
-  display: none;
-}
-@media (max-width: 1024px) {
-  .burger {
-    display: block;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    z-index: 150;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 0 20px -8px #000;
-            box-shadow: 0 0 20px -8px #000;
-    background: #fff;
-    cursor: pointer;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .burger--follow {
-    -webkit-box-shadow: 0 0 10px 1px #6d839b;
-            box-shadow: 0 0 10px 1px #6d839b;
-    background: #fff;
-  }
-  .burger__line {
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    background: #1E212C;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .burger__line:first-child, .burger__line:last-child {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .burger__line:first-child {
-    margin-bottom: 5px;
-  }
-  .burger__line:last-child {
-    margin-top: 5px;
-  }
-  .burger._active {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  .burger._active .burger__line:first-child, .burger._active .burger__line:last-child {
-    margin: 0;
-    position: absolute;
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
 }
 
 /*==================================== ANIMATION ====================================*/

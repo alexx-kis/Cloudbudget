@@ -7,20 +7,40 @@ $(function () {
 		arrows: false,
 		dots: true,
 		appendDots: ('.focused__slider-dots'),
-	})
-
-	$('.burger, .overlay, .header__top a').on('click', function (e) {
-		// e.preventDefault();
-		$('.header').toggleClass('_open')
-		$('.overlay').toggleClass('_show')
-		$('.burger').toggleClass('_active')
-	})
+	});
 
 	$('.footer__column-title--services').on('click', function () {
-		$(this).next().slideToggle()
-	})
+		$(this).next().slideToggle();
+	});
 
-})
+});
+
+// $------------ burger ------------$ //
+const burger = document.querySelector('.burger');
+const overlay = document.querySelector('.overlay');
+const header = document.querySelector('.header');
+
+const closeHeader = () => {
+	header.classList.remove('_open');
+	overlay.classList.remove('_show');
+	burger.classList.remove('_active');
+};
+
+burger.addEventListener('click', () => {
+	header.classList.toggle('_open');
+	overlay.classList.toggle('_show');
+	burger.classList.toggle('_active');
+});
+header.addEventListener('click', (e) => {
+	if (e.target.closest('.header__menu-link')) {
+		closeHeader();
+	}
+});
+overlay.addEventListener('click', () => {
+	closeHeader();
+});
+
+
 
 /*==================================== ANIMATION ====================================*/
 
@@ -33,7 +53,7 @@ if (animItems.length > 0) {
 			let animItem = animItems[i];
 			let animItemHeight = animItem.offsetHeight;
 			let animItemOffset = offset(animItem).top;
-			let animStart = 4
+			let animStart = 4;
 			let animItemPoint = window.innerHeight - (animItemHeight / animStart);
 
 			if (animItemHeight > window.innerHeight) {
@@ -52,7 +72,7 @@ if (animItems.length > 0) {
 				let rect = elem.getBoundingClientRect(),
 					scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
 					scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-				return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+				return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
 			}
 		}
 	}
