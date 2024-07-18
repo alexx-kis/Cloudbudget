@@ -1,0 +1,102 @@
+/*^ //^======================== CARDS ========================^// ^*/
+/*^ //^======================== CARDS ========================^// ^*/
+
+/*^ //^------------ feature-card ------------^// ^*/
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+
+  @media (hover:hover) {
+    &:hover {
+      img {
+        scale: 1.05;
+      }
+    }
+  }
+
+  &__card:last-child {
+    margin-right: 0;
+  }
+
+  &__image {
+    overflow: hidden;
+    border-radius: 10px;
+
+    @media (max-width: $MOBILE) {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s;
+  }
+
+  &__info {
+    max-width: 85%;
+    padding-top: const(30px);
+    padding-inline: const(20px);
+    padding-bottom: const(25px);
+    position: relative;
+    z-index: 1;
+    margin-top: calc(-1 * const(120px));
+    border-radius: const(8px);
+    background: #fff;
+    text-align: center;
+    transition: all .3s;
+    min-height: 60%;
+    box-shadow: 0 0 const(20px) 0 #eee;
+
+    @media (max-width: $LAPTOP) {
+      margin-top: calc(-1 * lap(120px, 20px));
+      padding-inline: lap(20px, 10px);
+      padding-block: lap(25px, 12px);
+    }
+    @media (max-width: $MOBILE) {
+      padding: mob(20px, 12px);
+    }
+  }
+
+  &__card:hover &__card-info {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: #101010;
+    font-size: const(18px);
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+
+    @media (max-width: $LAPTOP) {
+      font-size: lap(18px, 16px);
+    }
+  }
+
+  &__text {
+    margin-bottom: const(20px);
+    color: #101010;
+    font-size: const(12px);
+    text-align: center;
+
+    @media (max-width: $LAPTOP) {
+      margin-bottom: lap(20px, 14px);
+    }
+  }
+
+  &__link {
+    color: #ED4C5C;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center;
+    margin-top: auto;
+  }
+}
