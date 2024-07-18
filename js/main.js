@@ -1,13 +1,13 @@
 $(function () {
-	$('.focused__slider').slick({
-		centerMode: true,
-		// centerPadding: '40px',
-		slidesToShow: 1,
-		infinite: true,
-		arrows: false,
-		dots: true,
-		appendDots: ('.focused__slider-dots'),
-	});
+	// $('.focused__slider').slick({
+	// 	centerMode: true,
+	// 	// centerPadding: '40px',
+	// 	slidesToShow: 1,
+	// 	infinite: true,
+	// 	arrows: false,
+	// 	dots: true,
+	// 	appendDots: ('.focused__slider-dots'),
+	// });
 
 	$('.footer__column-title--services').on('click', function () {
 		$(this).next().slideToggle();
@@ -39,6 +39,18 @@ header.addEventListener('click', (e) => {
 overlay.addEventListener('click', () => {
 	closeHeader();
 });
+
+// $------------ focused slider ------------$ //
+new Splide('.focused__slider', {
+	padding: '50px',
+	type: 'loop',
+	focus: 'center',
+	arrows: false,
+	classes: {
+		pagination: 'splide__pagination focused__slider-pagination',
+		page: 'splide__pagination__page focused__slider-page',
+	},
+}).mount();
 
 
 

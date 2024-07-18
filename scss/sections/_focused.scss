@@ -2,27 +2,38 @@
 /*@ //@======================== focused ========================@// @*/
 
 .focused {
-  padding: 94px 0 95px 0;
+  padding-block: const(90px);
   position: relative;
   background: #ED4C5C;
 
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @media (max-width: $LAPTOP) {
+    padding-block: lap(90px, 45px);
   }
 
-  &__content {
-    max-width: 445px;
-    margin-right: 30px;
+  &__inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: const(30px);
+
+    @media (max-width: $LAPTOP) {
+      gap: lap(30px, 20px);
+    }
+
+    @media (max-width: $TABLET) {
+      display: flex;
+      flex-direction: column;
+    }
   }
+
+  &__content {}
 
   &__heading {
-    margin-bottom: 42px;
+    margin-bottom: const(40px);
+    color: #fff;
   }
 
   &__text {
-    margin-bottom: 40px;
+    margin-bottom: const(40px);
     color: #fff;
   }
 
@@ -30,7 +41,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 134px;
+    width: const(140px);
   }
 
   &__stores-item {}
@@ -46,61 +57,54 @@
   &__slider-inner {}
 
   &__slider {
-    width: 533px;
     position: relative;
-    border-radius: 6px;
+    border-radius: const(6px);
+    overflow: clip;
+    height: 100%;
+  }
+
+  &__slider-track {
+    height: 80%;
+
+    @media (max-width: $TABLET) {
+      height: auto;
+    }
   }
 
   &__slide {
-    padding: 0 10px;
+    padding-inline: 0 const(10px);
     cursor: pointer;
+
+    @media (max-width: $TABLET) {
+      aspect-ratio: 16 / 9;
+    }
   }
 
   &__slide img {
     width: 100%;
     height: 100%;
-    border-radius: 6px;
+    border-radius: const(6px);
     object-fit: cover;
   }
 
-  .heading--white {
-    color: #fff;
+  &__slider-pagination {
+    margin-top: const(20px);
+    position: static;
+    gap: const(6px);
   }
 
-  &__slider-dots .slick-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  &__slider-dots li {
-    margin-right: 12px;
-  }
-
-  &__slider-dots li:last-child {
-    margin-right: 0;
-  }
-
-  &__slider-dots button {
-    display: flex;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    font-size: 0;
-  }
-
-  &__slider-dots button::before {
-    content: "";
-    width: 100%;
-    height: 3px;
-    border-radius: 3px;
+  &__slider-page {
+    width: const(30px);
+    height: const(3px);
+    border-radius: const(3px);
     background-color: #ffffff;
-  }
+    opacity: 1;
+    margin: auto;
 
-  &__slider-dots .slick-active button::before {
-    background-color: #424551;
-    transition: all .3s;
+    &.is-active {
+      background-color: #424551;
+      transform: none;
+      transition: all 250ms;
+    }
   }
 }

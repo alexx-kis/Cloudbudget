@@ -1044,30 +1044,42 @@ html {
 /*@ //@======================== focused ========================@// @*/
 /*@ //@======================== focused ========================@// @*/
 .focused {
-  padding: 94px 0 95px 0;
+  padding-block: max(6.25vw, 90px);
   position: relative;
   background: #ED4C5C;
 }
-.focused__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media (max-width: 1024px) {
+  .focused {
+    padding-block: max(8.789vw, 45px);
+  }
 }
-.focused__content {
-  max-width: 445px;
-  margin-right: 30px;
+.focused__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: max(2.083vw, 30px);
+}
+@media (max-width: 1024px) {
+  .focused__inner {
+    gap: max(2.93vw, 20px);
+  }
+}
+@media (max-width: 834px) {
+  .focused__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .focused__heading {
-  margin-bottom: 42px;
+  margin-bottom: max(2.778vw, 40px);
+  color: #fff;
 }
 .focused__text {
-  margin-bottom: 40px;
+  margin-bottom: max(2.778vw, 40px);
   color: #fff;
 }
 .focused__stores {
@@ -1080,7 +1092,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 134px;
+  width: max(9.722vw, 140px);
 }
 .focused__stores-link {
   display: block;
@@ -1091,65 +1103,55 @@ html {
           transform: scale(1.1);
 }
 .focused__slider {
-  width: 533px;
   position: relative;
-  border-radius: 6px;
+  border-radius: max(0.417vw, 6px);
+  overflow: clip;
+  height: 100%;
+}
+.focused__slider-track {
+  height: 80%;
+}
+@media (max-width: 834px) {
+  .focused__slider-track {
+    height: auto;
+  }
 }
 .focused__slide {
-  padding: 0 10px;
+  padding-inline: 0 max(0.694vw, 10px);
   cursor: pointer;
+}
+@media (max-width: 834px) {
+  .focused__slide {
+    aspect-ratio: 16/9;
+  }
 }
 .focused__slide img {
   width: 100%;
   height: 100%;
-  border-radius: 6px;
+  border-radius: max(0.417vw, 6px);
   -o-object-fit: cover;
      object-fit: cover;
 }
-.focused .heading--white {
-  color: #fff;
+.focused__slider-pagination {
+  margin-top: max(1.389vw, 20px);
+  position: static;
+  gap: max(0.417vw, 6px);
 }
-.focused__slider-dots .slick-dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-}
-.focused__slider-dots li {
-  margin-right: 12px;
-}
-.focused__slider-dots li:last-child {
-  margin-right: 0;
-}
-.focused__slider-dots button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  font-size: 0;
-}
-.focused__slider-dots button::before {
-  content: "";
-  width: 100%;
-  height: 3px;
-  border-radius: 3px;
+.focused__slider-page {
+  width: max(2.083vw, 30px);
+  height: max(0.208vw, 3px);
+  border-radius: max(0.208vw, 3px);
   background-color: #ffffff;
+  opacity: 1;
+  margin: auto;
 }
-.focused__slider-dots .slick-active button::before {
+.focused__slider-page.is-active {
   background-color: #424551;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
 
 /*@ //@======================== contact ========================@// @*/
