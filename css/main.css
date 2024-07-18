@@ -273,7 +273,8 @@ html {
 }
 .feature-card__image {
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: max(0.694vw, 10px);
+  width: 100%;
 }
 @media (max-width: 600px) {
   .feature-card__image {
@@ -323,11 +324,10 @@ html {
           box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
 }
 .feature-card__title {
-  margin-bottom: 20px;
+  margin-bottom: max(1.389vw, 20px);
   color: #101010;
   font-size: max(1.25vw, 18px);
   font-weight: 700;
-  line-height: 22px;
   text-align: center;
 }
 @media (max-width: 1024px) {
@@ -348,11 +348,71 @@ html {
 }
 .feature-card__link {
   color: #ED4C5C;
-  font-size: 12px;
+  font-size: max(0.833vw, 12px);
   font-weight: 700;
-  line-height: 150%;
+  line-height: 1.5;
   text-align: center;
   margin-top: auto;
+}
+
+/*^ //^------------ technology-card ------------^// ^*/
+.technology-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.technology-card__image-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: max(8.194vw, 118px);
+  height: max(8.333vw, 120px);
+  margin-bottom: max(1.389vw, 20px);
+}
+.technology-card__image-bg {
+  width: max(7.639vw, 110px);
+}
+.technology-card__image-bg img {
+  width: 100%;
+}
+.technology-card__image-fg {
+  margin-top: max(4.514vw, 65px);
+  position: absolute;
+  width: max(5.556vw, 80px);
+}
+.technology-card__image-fg img {
+  width: 100%;
+}
+.technology-card__title {
+  margin-bottom: max(0.694vw, 10px);
+  color: #101010;
+  font-size: max(1.25vw, 18px);
+  font-weight: 700;
+  text-align: center;
+}
+.technology-card__info {
+  color: #000000;
+  font-size: max(0.833vw, 12px);
+  text-align: center;
+  text-wrap: balance;
 }
 
 /*$ //$======================== HEADER ========================$// $*/
@@ -963,75 +1023,24 @@ html {
 /*@ //@======================== technology ========================@// @*/
 /*@ //@======================== technology ========================@// @*/
 .technology {
-  padding: 63px 0 104px;
+  padding-top: max(4.167vw, 60px);
+  padding-bottom: max(6.944vw, 100px);
+}
+@media (max-width: 1024px) {
+  .technology {
+    padding-top: max(5.859vw, 40px);
+    padding-bottom: max(9.766vw, 50px);
+  }
 }
 .technology__heading {
-  margin-bottom: 52px;
+  margin-bottom: max(3.472vw, 50px);
   text-align: center;
 }
-.technology__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.technology__list {
+  gap: max(1.389vw, 20px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(13.194vw, 190px), 1fr));
 }
-.technology__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 191px;
-  position: relative;
-}
-.technology__item-image-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 117px;
-  height: 120px;
-  margin-bottom: 19px;
-}
-.technology__item-bgimage {
-  margin: 0 auto;
-}
-.technology__item-frimage {
-  margin-top: 65px;
-  position: absolute;
-}
-.technology__item-heading {
-  margin-bottom: 10px;
-  color: #101010;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  text-align: center;
-}
-.technology__item-info {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  text-align: center;
-}
-
 /*@ //@======================== focused ========================@// @*/
 /*@ //@======================== focused ========================@// @*/
 .focused {

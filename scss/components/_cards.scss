@@ -23,7 +23,8 @@
 
   &__image {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: const(10px);
+    width: 100%;
 
     @media (max-width: $MOBILE) {
       width: 100%;
@@ -58,6 +59,7 @@
       padding-inline: lap(20px, 10px);
       padding-block: lap(25px, 12px);
     }
+
     @media (max-width: $MOBILE) {
       padding: mob(20px, 12px);
     }
@@ -68,11 +70,10 @@
   }
 
   &__title {
-    margin-bottom: 20px;
+    margin-bottom: const(20px);
     color: #101010;
     font-size: const(18px);
     font-weight: 700;
-    line-height: 22px;
     text-align: center;
 
     @media (max-width: $LAPTOP) {
@@ -93,10 +94,62 @@
 
   &__link {
     color: #ED4C5C;
-    font-size: 12px;
+    font-size: const(12px);
     font-weight: 700;
-    line-height: 150%;
+    line-height: 1.5;
     text-align: center;
     margin-top: auto;
+  }
+}
+
+/*^ //^------------ technology-card ------------^// ^*/
+.technology-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__image-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: const(118px);
+    height: const(120px);
+    margin-bottom: const(20px);
+  }
+
+  &__image-bg {
+    width: const(110px);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__image-fg {
+    margin-top: const(65px);
+    position: absolute;
+    width: const(80px);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: const(10px);
+    color: #101010;
+    font-size: const(18px);
+    font-weight: 700;
+    text-align: center;
+  }
+
+
+  &__info {
+    color: #000000;
+    font-size: const(12px);
+    text-align: center;
+    text-wrap: balance;
   }
 }
