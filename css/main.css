@@ -227,6 +227,8 @@ html {
 .contact-form__select .select__list {
   border: max(0.069vw, 1px) solid #333333;
   border-top: none;
+  border-radius: 0 0 max(0.417vw, 6px) max(0.417vw, 6px);
+  overflow: clip;
 }
 .contact-form__select .select__label {
   padding-inline: max(2.083vw, 30px);
@@ -712,6 +714,7 @@ html {
   padding-block: max(1.389vw, 20px);
   border: max(0.069vw, 1px) solid #333333;
   border-radius: max(0.417vw, 6px);
+  width: 100%;
 }
 .contact-form__input::-webkit-input-placeholder, .contact-form__select::-webkit-input-placeholder {
   color: rgba(19, 39, 67, 0.5);
@@ -748,37 +751,76 @@ html {
 /*$ //$======================== FOOTER ========================$// $*/
 /*$ //$======================== FOOTER ========================$// $*/
 .footer {
-  padding: 85px 0;
+  padding-block: max(5.903vw, 85px);
   background: #FAFAFA;
 }
+@media (max-width: 1024px) {
+  .footer {
+    padding-block: max(8.301vw, 60px);
+  }
+}
+@media (max-width: 834px) {
+  .footer {
+    padding-block: max(7.194vw, 45px);
+  }
+}
 .footer__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 86px;
+  margin-bottom: max(5.972vw, 86px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(13.194vw, 190px), 1fr));
+  -webkit-column-gap: max(0.694vw, 10px);
+     -moz-column-gap: max(0.694vw, 10px);
+          column-gap: max(0.694vw, 10px);
+  row-gap: max(1.667vw, 24px);
 }
-.footer__column {
-  margin-right: 30px;
+@media (max-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: repeat(auto-fill, minmax(max(18.555vw, 160px), 1fr));
+  }
 }
-.footer__column:last-child {
-  margin-right: 0;
+@media (max-width: 425px) {
+  .footer__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
 }
 .footer__column-title {
-  margin-bottom: 28px;
+  margin-bottom: max(1.944vw, 28px);
   color: #101010;
-  font-size: 18px;
+  font-size: max(1.25vw, 18px);
   font-weight: 700;
-  line-height: 22px;
   pointer-events: none;
 }
+@media (max-width: 1024px) {
+  .footer__column-title {
+    margin-bottom: max(2.734vw, 20px);
+  }
+}
+@media (max-width: 834px) {
+  .footer__column-title {
+    margin-bottom: max(2.398vw, 18px);
+  }
+}
+@media (max-width: 600px) {
+  .footer__column-title {
+    margin-bottom: max(3vw, 14px);
+  }
+}
+@media (max-width: 425px) {
+  .footer__column-title {
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
 .footer__column-text {
-  width: 175px;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 150%;
+  max-width: max(12.153vw, 175px);
+  font-size: max(0.833vw, 12px);
 }
 .footer__list {
   display: -webkit-box;
@@ -788,21 +830,28 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: max(0.694vw, 10px);
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
-.footer__list-item {
-  margin-bottom: 10px;
+@media (max-width: 425px) {
+  .footer__list {
+    max-height: 0;
+    overflow: clip;
+  }
 }
-.footer__link {
+.footer__list-link {
+  display: block;
   color: #000000;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 160%;
+  font-size: max(0.833vw, 12px);
   text-transform: capitalize;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
-.footer__link:hover {
-  color: #ED4C5C;
+@media (hover: hover) {
+  .footer__list-link:hover {
+    color: #ED4C5C;
+  }
 }
 .footer__contacts {
   display: -webkit-box;
@@ -813,58 +862,38 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.footer__mail {
-  margin-bottom: 11px;
-  color: #101010;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.footer__mail:hover {
-  color: #ED4C5C;
-}
-.footer__phone {
-  margin-bottom: 20px;
-  color: #101010;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.footer__phone:hover {
-  color: #ED4C5C;
-}
 .footer__socials {
-  width: 64px;
-}
-.footer__socials-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.footer__socials-item {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  gap: max(0.694vw, 10px);
 }
 .footer__socials-link {
   display: block;
-  width: 14px;
-  height: 14px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  width: max(0.972vw, 14px);
+  height: max(0.972vw, 14px);
 }
-.footer__socials-link path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.footer__socials-link svg path {
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
-.footer__socials-link:hover path {
-  fill: #ED4C5C;
+@media (hover: hover) {
+  .footer__socials-link:hover svg path {
+    fill: #ED4C5C;
+  }
+}
+.footer__banks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: max(0.694vw, 10px);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /*@ //@======================== hero ========================@// @*/
@@ -1287,7 +1316,17 @@ html {
 /*@ //@======================== contact ========================@// @*/
 /*@ //@======================== contact ========================@// @*/
 .contact {
-  padding: 117px 0;
+  padding-block: max(8.333vw, 120px);
+}
+@media (max-width: 1024px) {
+  .contact {
+    padding-block: max(11.719vw, 100px);
+  }
+}
+@media (max-width: 834px) {
+  .contact {
+    padding-block: max(11.99vw, 45px);
+  }
 }
 .contact__inner {
   display: -webkit-box;
@@ -1297,6 +1336,14 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: max(2.083vw, 30px);
+}
+@media (max-width: 834px) {
+  .contact__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .contact__content {
   max-width: max(30.903vw, 445px);
@@ -1308,6 +1355,9 @@ html {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
+}
+.contact__form {
+  min-width: 50%;
 }
 .contact__form-service {
   color: rgba(19, 39, 67, 0.5);

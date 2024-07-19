@@ -2,59 +2,92 @@
 /*$ //$======================== FOOTER ========================$// $*/
 
 .footer {
-  padding: 85px 0;
+  padding-block: const(85px);
   background: #FAFAFA;
+  @media (max-width: $LAPTOP) {
+    padding-block: lap(85px, 60px);
+  }
+  @media (max-width: $TABLET) {
+    padding-block: tab(60px, 45px);
+  }
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 86px;
+    margin-bottom: const(86px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(const(190px), 1fr));
+    column-gap: const(10px);
+    row-gap: const(24px);
+
+    @media (max-width: $LAPTOP) {
+      grid-template-columns: repeat(auto-fill, minmax(lap(190px, 160px), 1fr));
+    }
+
+    @media (max-width: 425px) {
+      $vp: 425px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
-  &__column {
-    margin-right: 30px;
-  }
-
-  &__column:last-child {
-    margin-right: 0;
-  }
+  &__column {}
 
   &__column-title {
-    margin-bottom: 28px;
+    margin-bottom: const(28px);
     color: #101010;
-    font-size: 18px;
+    font-size: const(18px);
     font-weight: 700;
-    line-height: 22px;
     pointer-events: none;
+
+    @media (max-width: $LAPTOP) {
+      margin-bottom: lap(28px, 20px);
+    }
+
+    @media (max-width: $TABLET) {
+      margin-bottom: tab(20px, 18px);
+    }
+
+    @media (max-width: $MOBILE) {
+      margin-bottom: mob(18px, 14px);
+    }
+
+    @media (max-width: 425px) {
+      pointer-events: all;
+      cursor: pointer;
+    }
   }
 
   &__column-text {
-    width: 175px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 150%;
+    max-width: const(175px);
+    font-size: const(12px);
   }
 
   &__list {
     display: flex;
     flex-direction: column;
+    gap: const(10px);
+    transition: all 250ms;
+
+    @media (max-width: 425px) {
+      max-height: 0;
+      overflow: clip;
+    }
   }
 
-  &__list-item {
-    margin-bottom: 10px;
-  }
+  &__list-item {}
 
-  &__link {
+  &__list-link {
+    display: block;
     color: #000000;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 160%;
+    font-size: const(12px);
     text-transform: capitalize;
-    transition: all .3s;
-  }
+    transition: all 250ms;
 
-  &__link:hover {
-    color: #ED4C5C;
+    @media (hover:hover) {
+      &:hover {
+        color: #ED4C5C;
+      }
+    }
   }
 
   &__contacts {
@@ -62,57 +95,39 @@
     flex-direction: column;
   }
 
-  &__mail {
-    margin-bottom: 11px;
-    color: #101010;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    transition: all .3s;
-  }
-
-  &__mail:hover {
-    color: #ED4C5C;
-  }
-
-  &__phone {
-    margin-bottom: 20px;
-    color: #101010;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    transition: all .3s;
-  }
-
-  &__phone:hover {
-    color: #ED4C5C;
-  }
-
   &__socials {
-    width: 64px;
-  }
-
-  &__socials-inner {
     display: flex;
-    justify-content: space-between;
+    gap: const(10px);
   }
 
-  &__socials-item {
-    transition: all .3s;
-  }
+  &__socials-item {}
 
   &__socials-link {
     display: block;
-    width: 14px;
-    height: 14px;
-    transition: all .3s;
+    transition: all 250ms;
+    @include square(const(14px));
+
+    svg {
+      path {
+        transition: all 250ms;
+      }
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        svg {
+          path {
+            fill: #ED4C5C;
+          }
+        }
+      }
+    }
   }
 
-  &__socials-link path {
-    transition: all .3s;
-  }
-
-  &__socials-link:hover path {
-    fill: #ED4C5C;
+  &__banks {
+    display: flex;
+    align-items: center;
+    gap: const(10px);
+    flex-wrap: wrap;
   }
 }

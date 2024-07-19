@@ -2,12 +2,23 @@
 /*@ //@======================== contact ========================@// @*/
 
 .contact {
-  padding: 117px 0;
+  padding-block: const(120px);
+
+  @media (max-width: $LAPTOP) {
+    padding-block: lap(120px, 100px);
+  }
+  @media (max-width: $TABLET) {
+    padding-block: tab(100px, 45px);
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
     gap: const(30px);
+
+    @media (max-width: $TABLET) {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -26,6 +37,7 @@
 
   &__form {
     // width: 540px;
+    min-width: 50%;
   }
 
   &__form-service {

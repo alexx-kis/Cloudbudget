@@ -20,6 +20,7 @@
     padding-block: const(20px);
     border: const(1px) solid #333333;
     border-radius: const(6px);
+    width: 100%;
 
     &::placeholder {
       color: rgba(19, 39, 67, 0.5);

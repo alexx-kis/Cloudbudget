@@ -1,22 +1,5 @@
 import './dropdowns-and-select.js';
 
-$(function () {
-	// $('.focused__slider').slick({
-	// 	centerMode: true,
-	// 	// centerPadding: '40px',
-	// 	slidesToShow: 1,
-	// 	infinite: true,
-	// 	arrows: false,
-	// 	dots: true,
-	// 	appendDots: ('.focused__slider-dots'),
-	// });
-
-	$('.footer__column-title--services').on('click', function () {
-		$(this).next().slideToggle();
-	});
-
-});
-
 // $------------ burger ------------$ //
 const burger = document.querySelector('.burger');
 const overlay = document.querySelector('.overlay');
@@ -53,6 +36,19 @@ new Splide('.focused__slider', {
 		page: 'splide__pagination__page focused__slider-page',
 	},
 }).mount();
+
+// $------------ footer list ------------$ //
+const footerColumnTitle = document.querySelector('.footer__column-title._services');
+const footerList = document.querySelector('.footer__list');
+footerColumnTitle.addEventListener('click', () => {
+	if (!footerList.classList.contains('open')) {
+		footerList.style.maxHeight = `${footerList.scrollHeight}px`;
+		footerList.classList.add('open');
+	} else {
+		footerList.style.maxHeight = null;
+		footerList.classList.remove('open');
+	}
+});
 
 
 

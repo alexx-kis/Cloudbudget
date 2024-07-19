@@ -13,10 +13,12 @@
       background-color: #fff;
       top: 100%;
     }
-
+    
     &__list {
       border: const(1px) solid #333333;
       border-top: none;
+      border-radius: 0 0 const(6px) const(6px);
+      overflow: clip;
     }
 
     &__label {
