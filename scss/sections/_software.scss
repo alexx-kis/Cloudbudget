@@ -108,6 +108,7 @@
 
   &__video-button {
     display: block;
+    transition: all 250ms;
     @include square(100%);
 
     img {

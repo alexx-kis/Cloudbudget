@@ -34,6 +34,7 @@
       background-color: #fff;
       color: #000;
       translate: 100%;
+      height: 100dvh;
     }
   }
 
@@ -82,8 +83,7 @@
     }
   }
 
-  &__menu-item {
-  }
+  &__menu-item {}
 
   &__menu-link {
     display: flex;
